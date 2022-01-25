@@ -19,7 +19,7 @@ pub fn Get() -> Result<Vec<question>, Error> {
     let id: u32 = 1;
     println!("Connection Successful");
     let mut arr:Vec<question> = Vec::new();
-    for row in client.query("SELECT \"ID\", \"Text\" FROM public.\"Questions\";", &[])? {           
+    for row in client.query("SELECT "ID", "Text" FROM public."Questions";", &[])? {           
         arr.push(question{
             ID: row.get(0),
             Text: row.get(1),
